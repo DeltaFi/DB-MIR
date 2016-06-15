@@ -7,7 +7,7 @@
 /* Preload Images*/
 $(window).load(function () {
   var background = getRandomInt(nbackgrounds);
-  var temp = new image();
+  var temp = new Image();
   temp.src = "backgrounds/background" + background.toString() + ".gif)";
   image = temp;
 });

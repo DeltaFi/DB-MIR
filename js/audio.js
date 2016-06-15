@@ -26,7 +26,7 @@ gainNode.connect(audioCtx.destination);
 var nImages = 82;
 var nTops = 97;
 var nbackgrounds = 175;
-var image = new image();
+var image = new Image();
 //extended range for foreground gifs
 
 var extendedNImages = Math.floor(nImages * nothingnessFactor);
@@ -40,7 +40,7 @@ function getRandomInt(max) {
 function updateBackground() {
   $('#background').css(image.src);
   var background = getRandomInt(nbackgrounds);
-  var temp = new image();
+  var temp = new Image();
   temp.src = "backgrounds/background" + background.toString() + ".gif)";
   image = temp;
 }
