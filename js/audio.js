@@ -41,7 +41,7 @@ function updateBackground() {
   $('#background').css(image.src);
   var background = getRandomInt(nbackgrounds);
   var temp = new Image();
-  temp.src = "backgrounds/background" + background.toString() + ".gif";
+  temp.src = "http://doctorbondage.com/backgrounds/background" + background.toString() + ".gif";
   image = temp;
 }
 
