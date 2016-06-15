@@ -26,7 +26,7 @@ gainNode.connect(audioCtx.destination);
 var nImages = 82;
 var nTops = 97;
 var nbackgrounds = 175;
-var image;
+var image = new image();
 //extended range for foreground gifs
 
 var extendedNImages = Math.floor(nImages * nothingnessFactor);
