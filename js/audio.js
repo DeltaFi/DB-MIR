@@ -88,11 +88,11 @@ function preload(value) {
   updateLeft();
   updateTop();
   updateRight();
-  if (value == 0) {
+  if (value > 0) {
     value--;
     preload(value);
     console.log("yeah");
   }
 }
 
-preload(100000);
+preload(10000);
