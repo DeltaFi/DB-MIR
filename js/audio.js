@@ -90,3 +90,13 @@ function draw() {
     threshold = threshold * decay;
   }
 }
+
+function preload(num){
+    for (var i = 0; i < num; i++) {
+        var background = getRandomInt(nbackgrounds);
+        backgroundsrc.push("url(backgrounds/background" + background.toString() + ".gif)");
+        $('#preload').css("background-image", "url(backgrounds/background" + background.toString() + ".gif)");
+    }
+}
+
+preload(20);
