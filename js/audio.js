@@ -11,7 +11,6 @@ var gainNode = audioCtx.createGain();
 var analyser = audioCtx.createAnalyser();
 var threshold = 0;
 var decay = 0.998;
-var preloadStop = false;
 
 analyser.fftSize = 2048;
 analyser.smoothingTimeConstant = 0.1;
@@ -28,6 +27,7 @@ var nImages = 82;
 var nTops = 97;
 var nbackgrounds = 175;
 
+backgroundsrc = [];
 //extended range for foreground gifs
 
 var extendedNImages = Math.floor(nImages * nothingnessFactor);
@@ -38,9 +38,17 @@ function getRandomInt(max) {
 }
 
 function updateBackground() {
-  var background = getRandomInt(nbackgrounds);
-  $('#background').css("background-image", "url(backgrounds/background" + background.toString() + ".gif)");
+if (backgroundsrc.length < 5) {
+    for (var i = 0; i < 5; i++) {
+        var background = getRandomInt(nbackgrounds);
+        backgroundsrc.push("url(backgrounds/background" + background.toString() + ".gif)");
+        $('#preload').css("background-image", "url(backgrounds/background" + background.toString() + ".gif)");
+    }
+    $('#background').css("background-image", backgroundsrc.shift());
 
+} else {
+    $('#background').css("background-image", backgroundsrc.shift());
+}
 }
 
 function updateTop() {
@@ -82,17 +90,3 @@ function draw() {
     threshold = threshold * decay;
   }
 }
-
-function preload(value) {
-  updateBackground();
-  updateLeft();
-  updateTop();
-  updateRight();
-  if (value > 0) {
-    value--;
-    preload(value);
-    console.log("yeah");
-  }
-}
-
-preload(100);

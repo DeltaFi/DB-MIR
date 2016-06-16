@@ -7,7 +7,6 @@
 $("#info-btn").on("click", function toggleInfo() {
   $("#info-overlay").toggleClass("show");
   $("#info-btn").toggleClass("show");
-  $("#background").removeAttr("background-image");
 });
 
 //**************************************
