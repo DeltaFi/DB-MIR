@@ -39,7 +39,7 @@ function getRandomInt(max) {
 
 function updateBackground() {
 if (backgroundsrc.length < 5) {
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 25; i++) {
         var background = getRandomInt(nbackgrounds);
         backgroundsrc.push("url(backgrounds/background" + background.toString() + ".gif)");
         $('#preload').css("background-image", "url(backgrounds/background" + background.toString() + ".gif)");
@@ -83,9 +83,9 @@ function draw() {
     preloadStop = true;
     threshold = bassmean * bassmean;
     updateBackground();
-    updateRight();
-    updateTop();
-    updateLeft();
+    //updateRight();
+    //updateTop();
+    //updateLeft();
   } else {
     threshold = threshold * decay;
   }
