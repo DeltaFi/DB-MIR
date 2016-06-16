@@ -395,7 +395,7 @@ canvas {
   top: 0px;
   left: 0px;
   overflow: hidden;
-  background: white;
+  background: black;
 }
 #wrapper> div {
   background-repeat: no-repeat !important;
