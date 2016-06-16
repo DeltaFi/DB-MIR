@@ -107,7 +107,8 @@ $( "#righton" ).change(function() {
 //**************************************
 
 SC.initialize({
-  client_id: 'f779495a78ca840a61a1f499d830f11e'
+  client_id: 'f779495a78ca840a61a1f499d830f11e',
+  redirect_uri: 'http://doctorbondage.com/callback.html'
 });
 
 $("soundcloud-connect-btn").on("click", function soundcloudConnect(){
