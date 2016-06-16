@@ -99,4 +99,4 @@ function preload(num){
     }
 }
 
-preload(20);
+preload(40);
