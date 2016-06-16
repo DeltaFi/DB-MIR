@@ -111,12 +111,14 @@ SC.initialize({
   redirect_uri: 'http://doctorbondage.com/callback.html'
 });
 
-$("soundcloud-connect-btn").on("click", function soundcloudConnect(){
+$("soundcloud-connect-btn").click( function soundcloudConnect(){
     SC.connect().then(function() {
         $("#soundcloudconnectmessage").toggleClass("show");
         $("#soundcloud-connect-btn").toggleClass("hide");
     });
 });
+
+
 
 $("soundcloud-disconnect-btn").on("click", function soundcloudDisconnect(){
 
