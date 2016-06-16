@@ -10,7 +10,8 @@ var source = audioCtx.createMediaElementSource(audio);
 var gainNode = audioCtx.createGain();
 var analyser = audioCtx.createAnalyser();
 var threshold = 0;
-var decay = 0.997;
+var decay = 0.998;
+var preloadStop = false;
 
 analyser.fftSize = 2048;
 analyser.smoothingTimeConstant = 0.1;
@@ -26,23 +27,20 @@ gainNode.connect(audioCtx.destination);
 var nImages = 82;
 var nTops = 97;
 var nbackgrounds = 175;
-var image = new Image();
+
 //extended range for foreground gifs
 
 var extendedNImages = Math.floor(nImages * nothingnessFactor);
 var extendedNTops = Math.floor(nTops * nothingnessFactor);
-
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * (max + 1));
 }
 
 function updateBackground() {
-  $('#background').css(image.src);
   var background = getRandomInt(nbackgrounds);
-  var temp = new Image();
-  temp.src = "http://doctorbondage.com/backgrounds/background" + background.toString() + ".gif";
-  image = temp;
+  $('#background').css("background-image", "url(backgrounds/background" + background.toString() + ".gif)");
+
 }
 
 function updateTop() {
@@ -67,20 +65,34 @@ function updateRight() {
 }
 
 function draw() {
-    analyser.getByteFrequencyData(frequencyData);
-    var bass = 0;
-    for ( var i = 0; i < frequencyBinCount; i++ ) {
-        bass = bass + frequencyData[i];
-    }
-    var bassmean = bass / frequencyBinCount;
-    if (bassmean*bassmean > threshold){
-        threshold = bassmean*bassmean;
-        updateBackground();
-        //updateRight();
-        //updateTop();
-        //updateLeft();
-    }
-    else {
-        threshold = threshold * decay;
-    }
+  analyser.getByteFrequencyData(frequencyData);
+  var bass = 0;
+  for (var i = 0; i < frequencyBinCount; i++) {
+    bass = bass + frequencyData[i];
+  }
+  var bassmean = bass / frequencyBinCount;
+  if (bassmean * bassmean > threshold) {
+    preloadStop = true;
+    threshold = bassmean * bassmean;
+    updateBackground();
+    updateRight();
+    updateTop();
+    updateLeft();
+  } else {
+    threshold = threshold * decay;
+  }
 }
+
+function preload(value) {
+  updateBackground();
+  updateLeft();
+  updateTop();
+  updateRight();
+  if (value == 0) {
+    value--;
+    preload(value);
+    console.log("yeah");
+  }
+}
+
+preload(100000);
