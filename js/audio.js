@@ -95,4 +95,4 @@ function preload(value) {
   }
 }
 
-preload(10000);
+preload(100);
