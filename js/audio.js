@@ -12,7 +12,7 @@ var analyser = audioCtx.createAnalyser();
 var threshold = 0;
 var decay = 0.999;
 
-analyser.fftSize = 2048;
+analyser.fftSize = 1024;
 analyser.smoothingTimeConstant = 0.1;
 var frequencyBinCount = analyser.frequencyBinCount;
 var frequencyData = new Uint8Array(frequencyBinCount);
@@ -45,7 +45,6 @@ function draw() {
   if (freqMean * freqMean > threshold) {
     threshold = freqMean * freqMean;
     updateBackground();
-  } else {
-    threshold = threshold * decay;
   }
+  threshold = threshold * decay;
 }
