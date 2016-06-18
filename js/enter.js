@@ -4,14 +4,6 @@
 // Landing page code
 //**************************************
 
-// TODO:: change starting song, add proper domain url
-$("#enter").on("click", function init() {
-  $("#welcome").remove();
-  addToPlaylist("Daniel Avery - Drone Logic", "Daniel-Avery-Drone-Logic.mp3");
-  play($("#playlist:first-child .playTrack"));
-  setInterval(draw, 1);
-});
-
 // Title canvas Code
 
 var c = document.createElement('canvas'),
@@ -94,3 +86,12 @@ function loop() {
 document.body.appendChild(c);
 document.getElementById('title').appendChild(c);
 loop();
+
+//enter button
+
+$("#enter").on("click", function init() {
+  $("#welcome").remove();
+  addToPlaylist("Daniel Avery - Drone Logic", "Daniel-Avery-Drone-Logic.mp3");
+  play($("#playlist:first-child .playTrack"));
+  setInterval(draw, 1);
+});

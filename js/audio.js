@@ -24,15 +24,23 @@ gainNode.connect(audioCtx.destination);
 
 //number of images
 var nbackgrounds = 195;
+var imageUrls = [];
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * (max + 1));
 }
 
-function updateBackground() {
-  var background = getRandomInt(nbackgrounds);
-  $('#background').css("background-image", "url(backgrounds/background" + background.toString() + ".gif)");
+function loadImage()
+{
+    var url = "backgrounds/background" + getRandomInt(nbackgrounds).toString() + ".gif";
+    var img = new Image();
+    img.src = url;
+    imageUrls.push(url);
+}
 
+
+function display(){
+    $('#background').css("background-image", "url(" + imageUrls.shift().toString() + ")");
 }
 
 function draw() {
@@ -44,18 +52,14 @@ function draw() {
   var freqMean = freqSum / frequencyBinCount;
   if (freqMean * freqMean > threshold) {
     threshold = freqMean * freqMean;
-    updateBackground();
+    loadImage();
+    display();
+    console.log(imageUrls.length);
   }
   threshold = threshold * decay;
 }
 
-function preloadImage(url)
-{
-    var img=new Image();
-    console.log(url);
-    img.src=url;
-}
 
-for (var i = 0; i <= nbackgrounds; i++){
-    preloadImage("backgrounds/background" + i.toString() + ".gif");
+for (var i = 0; i <= 4; i++){
+    loadImage();
 }
