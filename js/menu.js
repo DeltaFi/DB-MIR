@@ -20,9 +20,13 @@ $("#info-btn").on("click", function toggleInfo() {
 
 SC.initialize({
   client_id: 'f779495a78ca840a61a1f499d830f11e',
-  redirect_uri: 'http://doctorbondage.com/callback.html'
 });
 
+SC.get('/tracks', {
+  genres: 'punk', bpm: { from: 120 }
+}).then(function(tracks) {
+  console.log(tracks);
+});
 
 
 
