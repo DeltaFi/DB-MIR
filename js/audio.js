@@ -36,6 +36,7 @@ function loadImage()
     var img = new Image();
     img.src = url;
     imageUrls.push(url);
+    console.log("LOADIMG" imageUls.length);
 }
 
 
@@ -62,4 +63,5 @@ function draw() {
 
 for (var i = 0; i <= 4; i++){
     loadImage();
+    console.log("GOOD");
 }
