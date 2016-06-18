@@ -10,7 +10,7 @@ var source = audioCtx.createMediaElementSource(audio);
 var gainNode = audioCtx.createGain();
 var analyser = audioCtx.createAnalyser();
 var threshold = 0;
-var decay = 0.99;
+var decay = 0.995;
 
 analyser.fftSize = 1024;
 analyser.smoothingTimeConstant = 0.1;
