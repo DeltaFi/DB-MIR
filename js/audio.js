@@ -48,3 +48,14 @@ function draw() {
   }
   threshold = threshold * decay;
 }
+
+function preloadImage(url)
+{
+    var img=new Image();
+    console.log(url);
+    img.src=url;
+}
+
+for (var i = 0; i <= nbackgrounds; i++){
+    preloadImage("backgrounds/background" + i.toString() + ".gif");
+}
