@@ -71,13 +71,12 @@ function draw() {
   if (freqweightedMean * freqweightedMean > threshold) {
     threshold = freqweightedMean * freqweightedMean;
     display();
-    loadImage();
   }
   threshold = threshold * decay;
   console.log ("threshold: " + threshold);
 }
 
 
-for (var i = 0; i < 20; i++){
+for (var i = 0; i < nbackgrounds; i++){
     loadImage();
 }
