@@ -41,16 +41,16 @@ function loadImage()
 {
     var url = "backgrounds/background" + getRandomInt(nbackgrounds).toString() + ".gif";
     var preload = new Image();
-    preload.onload = function () {
+    preload.onload = function (preload) {
+        if(uniqueUrls.indexOf(preload.src) >= 0 ){
+            uniqueUrls.push(preload.src);
+        }
         if (uniqueUrls.length < nbackgrounds){
             loadImage();
         }
     };
     preload.src = url;
     imageUrls.push(url);
-    if(uniqueUrls.indexOf(url) >= 0 ){
-        uniqueUrls.push(url);
-    }
     console.log("GIF Buffer Length: " + imageUrls.length + " New URL: " + url);
 }
 
