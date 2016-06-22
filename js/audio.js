@@ -77,6 +77,14 @@ function draw() {
   threshold = threshold * decay;
 }
 
+audio.ontimeupdate = function() {
+    console.log(audio.currentTime, audio.duration);
+    $("#skip").value = audio.currentTime/audio.duration;
+}
+
+$("#skip").click( function () {
+    audio.currentTime = $("#skip").value * audio.duration;
+});
 
 for (var i = 0; i < nbackgrounds; i++){
     loadImage();

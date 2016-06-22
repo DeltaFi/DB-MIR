@@ -32,3 +32,13 @@ volume.onchange = function () {
     lastVolume = volume.value/100;
     gainNode.gain.value = lastVolume;
 }
+
+audio.ontimeupdate = function() {
+    console.log(audio.currentTime, audio.duration);
+    $("#skip").value = audio.currentTime/audio.duration;
+    console.log($("#skip").value);
+}
+
+$("#skip").click( function () {
+    audio.currentTime = $("#skip").value * audio.duration;
+});
