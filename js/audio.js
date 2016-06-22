@@ -78,11 +78,10 @@ function draw() {
 }
 
 audio.ontimeupdate = function() {
-    if (audio.currentTime >= audio.duration){
+    if (audio.currentTime >= (audio.duration - 1)){
         play($(".isPlaying").next());
     }
     $("#skip").val(Math.floor(1000 * audio.currentTime/audio.duration));
-    console.log(audio.currentTime/audio.duration);
 }
 
 $("#skip").click( function () {
