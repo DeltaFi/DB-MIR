@@ -31,19 +31,27 @@ gainNode.connect(audioCtx.destination);
 //number of images
 var nbackgrounds = 176;
 var imageUrls = [];
+var uniqueUrls = [];
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * (max + 1));
 }
 
-function loadImage()
+function* loadImage()
 {
     var url = "backgrounds/background" + getRandomInt(nbackgrounds).toString() + ".gif";
     //$('#preload').attr("src", url);
     var preload = new Image();
-    preload.onload = loadImage;
+    preload.onload = function () {
+        if (uniqueUrls.length > nbackgrounds){
+            loadImage();
+        }
+    };
     preload.src = url;
     imageUrls.push(url);
+    if(uniqueUrls.indexOf(url) >= 0 ){
+    uniqueUrls.push(url);
+    }
     console.log("GIF Buffer Length: " + imageUrls.length + " New URL: " + url);
 }
 
@@ -74,7 +82,6 @@ function draw() {
   if (freqweightedMean * freqweightedMean > threshold) {
     threshold = freqweightedMean * freqweightedMean;
     display();
-    loadImage();
   }
   threshold = threshold * decay;
 }
@@ -90,5 +97,12 @@ $("#skip").click( function () {
     audio.currentTime = ($("#skip").val()/1000) * audio.duration;
 });
 
+
+
 //preload images
+loadImage();
+loadImage();
+loadImage();
+loadImage();
+loadImage();
 loadImage();
