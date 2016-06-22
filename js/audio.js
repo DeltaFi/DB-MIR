@@ -6,6 +6,7 @@
 
 var audioCtx = new(window.AudioContext || window.webkitAudioContext)();
 var audio = document.getElementById("sound");
+audio.crossOrigin = "anonymous";
 var source = audioCtx.createMediaElementSource(audio);
 var gainNode = audioCtx.createGain();
 var analyser = audioCtx.createAnalyser();

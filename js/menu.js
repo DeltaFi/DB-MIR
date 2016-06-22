@@ -24,7 +24,7 @@ SC.initialize({
 
 var processSoundcloud = function (track) {
   if (track.streamable){
-      addToPlaylist(track.title,track.stream_url);
+      addToPlaylist(track.title,track.stream_url + "?client_id=f779495a78ca840a61a1f499d830f11e");
       $("#soundcloudComplete").show();
       setTimeout( function() {
           $("#soundcloudComplete").hide();
