@@ -10,9 +10,9 @@ function addToPlaylist(track_id, track_src) {
 
 function play(track) {
   $(".isPlaying").toggleClass("isPlaying");
-  audio.src = track.prev().attr("data-src");
-  updateTrackInfo(track.prev().text());
-  track.parent().toggleClass("isPlaying");
+  audio.src = track.children(".Track").attr("data-src");
+  updateTrackInfo(track.children(".Track").text());
+  track.toggleClass("isPlaying");
   audio.play();
 }
 
@@ -26,7 +26,7 @@ $("#playlist").on("click",".deleteTrack", function deleteFromPlaylist() {
 });
 
 $("#playlist").on("click", ".playTrack", function playPlaylistTrack() {
-  play($(this));
+  play($(this).parent());
 });
 
 $("#shuffle").on("click", function shufflePlaylist () {
