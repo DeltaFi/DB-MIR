@@ -81,12 +81,12 @@ audio.ontimeupdate = function() {
     if (audio.currentTime >= audio.duration){
         play($(".isPlaying").next());
     }
-    $("#skip").val(Math.floor(100 * audio.currentTime/audio.duration));
+    $("#skip").val(Math.floor(1000 * audio.currentTime/audio.duration));
     console.log(audio.currentTime/audio.duration);
 }
 
 $("#skip").click( function () {
-    audio.currentTime = ($("#skip").val()/100) * audio.duration;
+    audio.currentTime = ($("#skip").val()/1000) * audio.duration;
 });
 
 for (var i = 0; i < nbackgrounds; i++){
