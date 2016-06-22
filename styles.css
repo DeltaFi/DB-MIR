@@ -418,6 +418,19 @@ canvas {
   left: 0px;
   background-size: cover;
 }
+
+#wrapper #preload {
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -9999px;
+  z-index: -1000;
+  left: -9999px;
+  background-size: cover;
+}
+
 ul#progressBar {
   margin-left: 20%;
   margin-right: 20%;
