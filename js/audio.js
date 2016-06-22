@@ -78,12 +78,15 @@ function draw() {
 }
 
 audio.ontimeupdate = function() {
-    console.log(audio.currentTime, audio.duration);
-    $("#skip").value = audio.currentTime/audio.duration;
+    if (audio.currentTime >= audio.duration){
+        play($(".isPlaying").next());
+    }
+    $("#skip").val(audio.currentTime/audio.duration);
+    console.log($("#skip").val());
 }
 
 $("#skip").click( function () {
-    audio.currentTime = $("#skip").value * audio.duration;
+    audio.currentTime = $("#skip").val() * audio.duration;
 });
 
 for (var i = 0; i < nbackgrounds; i++){
