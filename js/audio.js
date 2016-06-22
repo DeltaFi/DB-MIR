@@ -65,10 +65,11 @@ function draw() {
   var freqweightedMean = freqsubMean + 2 * freqbassMean + freqmidMean + freqtrebMean;
   if (freqweightedMean * freqweightedMean > threshold) {
     threshold = freqweightedMean * freqweightedMean;
-    loadImage();
     display();
   }
   threshold = threshold * decay;
+  loadImage();
+  console.log ("decay: " + decay);
 }
 
 

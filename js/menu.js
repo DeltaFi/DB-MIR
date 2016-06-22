@@ -22,13 +22,6 @@ SC.initialize({
   client_id: 'f779495a78ca840a61a1f499d830f11e',
 });
 
-SC.get('/tracks', {
-  genres: 'punk', bpm: { from: 120 }
-}).then(function(tracks) {
-  console.log(tracks);
-});
-
-
 
 //**************************************
 // File Upload
