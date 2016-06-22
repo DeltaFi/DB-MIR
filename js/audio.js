@@ -12,6 +12,11 @@ var analyser = audioCtx.createAnalyser();
 var threshold = 0;
 var decay = 0.9993;
 
+var subSum = 0;
+var bassSum = 0;
+var midSum = 0;
+var trebSum = 0;
+
 analyser.fftSize = 1024;
 analyser.smoothingTimeConstant = 0.8;
 var frequencyBinCount = analyser.frequencyBinCount;
@@ -46,10 +51,10 @@ function display(){
 
 function draw() {
   analyser.getByteFrequencyData(frequencyData);
-  var subSum = 0;
-  var bassSum = 0;
-  var midSum = 0;
-  var trebSum = 0;
+  subSum = 0;
+  bassSum = 0;
+  midSum = 0;
+  trebSum = 0;
   subSum = frequencyData[0] + frequencyData[1];
   bassSum = frequencyData[2] + frequencyData[3] + frequencyData[4] + frequencyData[5];
   for (var i = 6; i < 100; i++) {
@@ -66,6 +71,7 @@ function draw() {
   if (freqweightedMean * freqweightedMean > threshold) {
     threshold = freqweightedMean * freqweightedMean;
     display();
+    loadImage();
   }
   threshold = threshold * decay;
   console.log ("threshold: " + threshold);
