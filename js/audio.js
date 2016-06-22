@@ -81,7 +81,7 @@ audio.ontimeupdate = function() {
     if (audio.currentTime >= audio.duration){
         play($(".isPlaying").next());
     }
-    $("#skip").val(audio.currentTime/audio.duration);
+    $("#skip").val(math.floor(100 * audio.currentTime/audio.duration));
     console.log(audio.currentTime/audio.duration);
 }
 
