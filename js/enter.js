@@ -89,8 +89,25 @@ loop();
 
 //enter button
 $(document).ready(function(){
-  $("#enter").show();
+    progressInterval = setInterval(updateProgressBar,2000);
 });
+
+
+var progressInterval;
+var progressCounter = 0;
+
+function updateProgressBar() {
+  $("li.inprogress").toggleClass("doneprogress");
+  var next = $("li.inprogress").next();
+  $("li.inprogress").toggleClass("inprogress");
+  next.toggleClass("inprogress");
+  progressCounter++;
+  if (progressCounter = 4){
+    clearInterval(progressInterval);
+    $("#progressBar").hide();
+    $("#enter").show();
+  }
+}
 
 
 $("#enter").on("click", function init() {
