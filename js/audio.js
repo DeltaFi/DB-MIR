@@ -82,7 +82,7 @@ audio.ontimeupdate = function() {
         play($(".isPlaying").next());
     }
     $("#skip").val(audio.currentTime/audio.duration);
-    console.log($("#skip").val());
+    console.log(audio.currentTime/audio.duration);
 }
 
 $("#skip").click( function () {
