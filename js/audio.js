@@ -46,7 +46,7 @@ function loadImage(preloadflag)
             uniqueUrls.push(preload.src);
         }
         if (uniqueUrls.length < nbackgrounds && preloadflag == true){
-            loadImage();
+            loadImage(true);
         }
     };
     preload.src = url;
