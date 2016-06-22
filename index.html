@@ -78,18 +78,18 @@
       </div>
     </div>
     <div>
-        <span id="uploadComplete" >Songs Added!</span>
+
     </div>
 
     <span><h3>SoundCloud</h3></span>
     <div>
       <input type="text" placeholder="Search..." id="soundcloudurl" />
-      <button id="soundcloudSource">Add to Playlist</button>
+      <button id="soundcloudSource">Add to Playlist</button><span id="soundcloudComplete" class="notificationComplete">Music Added!</span>
       <div id="notstreamable" class="error">
         Sorry, that track has streaming disabled
       </div>
       <div id="badurl" class="error">
-        Sorry, that URL is dog shit.
+        Nice Try Pal
       </div>
       <div id="notaurl" class="error">
         Sorry, thats not a url. perhaps you forgot to include 'http://' ?
@@ -105,7 +105,7 @@
     <div>
       <div>
         <input type="file" id="fileselect" accept="audio/*" multiple="">
-        <button id="fileSubmit">Add to Playlist</button>
+        <span id="uploadComplete" class="notificationComplete" >Music Added!</span>
         <div id="dropbox">DROP FILES HERE</div>
       </div>
       <div>

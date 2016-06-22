@@ -302,8 +302,10 @@ canvas {
   margin-top: 5%;
 }
 
-#info-overlay #uploadComplete{
+#info-overlay .notificationComplete{
     display: none;
+    color: green;
+    padding-left: 10px;
 }
 #info-overlay #soundcloudurl {
   width: 200px;
@@ -420,21 +422,7 @@ canvas {
   left: 0px;
   background-size: cover;
 }
-#wrapper #left {
-  display: none;
-  z-index: 3;
-  left: -500px;
-}
-#wrapper #top {
-  display: none;
-  z-index: 3;
-  left: 0px;
-}
-#wrapper #right {
-  display: none;
-  z-index: 3;
-  left: 500px;
-}
+
 #preload {
   display: none;
   top: -5000px;

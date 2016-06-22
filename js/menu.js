@@ -22,6 +22,42 @@ SC.initialize({
   client_id: 'f779495a78ca840a61a1f499d830f11e',
 });
 
+var processSoundcloud = function (track) {
+  if (track.streamable){
+      addToPlaylist(track.title,track.stream_url);
+      $("#soundcloudComplete").show();
+      setTimeout( function() {
+          $("#soundcloudComplete").hide();
+      }, 2000);
+  }
+  else{
+      $("#notstreamable").show();
+      setTimeout( function() {
+          $("#notstreamable").hide();
+      }, 2000);
+  }
+};
+
+$("#soundcloudSource").click( function () {
+    var url = $("#soundcloudurl").val();
+    if ( !url.includes("soundcloud")){
+        $("#badurl").show();
+        setTimeout( function() {
+            $("#badurl").hide();
+        }, 2000);
+    }
+    else if ( !url.includes("http")){
+        $("#notaurl").show();
+        setTimeout( function() {
+            $("#notaurl").hide();
+        }, 2000);
+    }
+    else {
+        SC.resolve(url).then(processSoundcloud);
+    }
+
+});
+
 
 //**************************************
 // File Upload
@@ -65,5 +101,8 @@ function handleFiles(files) {
     var objectURL = URL.createObjectURL(file);
     addToPlaylist(file.name, objectURL);
   }
-  $("#uploadComplete").toggleClass("show");
+  $("#uploadComplete").show();
+  setTimeout( function() {
+      $("#uploadComplete").hide();
+  }, 2000);
 }
