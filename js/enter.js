@@ -111,11 +111,10 @@ $("#enter").on("click", function init() {
   $("#welcome").remove();
   addToPlaylist("Daniel Avery - Drone Logic", "Daniel-Avery-Drone-Logic.mp3");
   play($("#playlist li:first"));
-  console.log($("#playlist:first"));
   setInterval(draw, 1);
 });
 
 
 $(document).ready(function(){
-    progressInterval = setInterval(updateProgressBar,2000);
+    progressInterval = setInterval(updateProgressBar,100);
 });
