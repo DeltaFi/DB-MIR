@@ -37,12 +37,48 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * (max + 1));
 }
 
-function* loadImage()
+function loadImage()
 {
     var url = "backgrounds/background" + getRandomInt(nbackgrounds).toString() + ".gif";
-    //$('#preload').attr("src", url);
+    var url2 = "backgrounds/background" + getRandomInt(nbackgrounds).toString() + ".gif";
+    var url3 = "backgrounds/background" + getRandomInt(nbackgrounds).toString() + ".gif";
+    var url4 = "backgrounds/background" + getRandomInt(nbackgrounds).toString() + ".gif";
+    var url5 = "backgrounds/background" + getRandomInt(nbackgrounds).toString() + ".gif";
+    var url6 = "backgrounds/background" + getRandomInt(nbackgrounds).toString() + ".gif";
     var preload = new Image();
+    var preload2 = new Image();
+    var preload3 = new Image();
+    var preload4 = new Image();
+    var preload5 = new Image();
+    var preload6 = new Image();
+
     preload.onload = function () {
+        if (uniqueUrls.length > nbackgrounds){
+            loadImage();
+        }
+    };
+    preload2.onload = function () {
+        if (uniqueUrls.length > nbackgrounds){
+            loadImage();
+        }
+    };
+    preload3.onload = function () {
+        if (uniqueUrls.length > nbackgrounds){
+            loadImage();
+        }
+    };
+
+    preload4.onload = function () {
+        if (uniqueUrls.length > nbackgrounds){
+            loadImage();
+        }
+    };
+    preload5.onload = function () {
+        if (uniqueUrls.length > nbackgrounds){
+            loadImage();
+        }
+    };
+    preload6.onload = function () {
         if (uniqueUrls.length > nbackgrounds){
             loadImage();
         }
@@ -51,6 +87,31 @@ function* loadImage()
     imageUrls.push(url);
     if(uniqueUrls.indexOf(url) >= 0 ){
     uniqueUrls.push(url);
+    }
+    preload2.src = url2;
+    imageUrls.push(url2);
+    if(uniqueUrls.indexOf(url2) >= 0 ){
+    uniqueUrls.push(url2);
+    }
+    preload3.src = url3;
+    imageUrls.push(url3);
+    if(uniqueUrls.indexOf(url3) >= 0 ){
+    uniqueUrls.push(url3);
+    }
+    preload4.src = url4;
+    imageUrls.push(url4);
+    if(uniqueUrls.indexOf(url4) >= 0 ){
+    uniqueUrls.push(url4);
+    }
+    preload5.src = url5;
+    imageUrls.push(url5);
+    if(uniqueUrls.indexOf(url5) >= 0 ){
+    uniqueUrls.push(url5);
+    }
+    preload6.src = url6;
+    imageUrls.push(url6);
+    if(uniqueUrls.indexOf(url6) >= 0 ){
+    uniqueUrls.push(url6);
     }
     console.log("GIF Buffer Length: " + imageUrls.length + " New URL: " + url);
 }
@@ -100,9 +161,4 @@ $("#skip").click( function () {
 
 
 //preload images
-loadImage();
-loadImage();
-loadImage();
-loadImage();
-loadImage();
 loadImage();
