@@ -91,3 +91,9 @@ $("#skip").click( function () {
 
 loadImage();
 $('#preload').load(loadImage());
+$('#preload').load(loadImage());
+$('#preload').load(loadImage());
+$('#preload').load(loadImage());
+$('#preload').load(loadImage());
+$('#preload').load(loadImage());
+$('#preload').load(loadImage());
