@@ -10,10 +10,10 @@ var source = audioCtx.createMediaElementSource(audio);
 var gainNode = audioCtx.createGain();
 var analyser = audioCtx.createAnalyser();
 var threshold = 0;
-var decay = 0.999;
+var decay = 0.9993;
 
 analyser.fftSize = 1024;
-analyser.smoothingTimeConstant = 0.1;
+analyser.smoothingTimeConstant = 0.8;
 var frequencyBinCount = analyser.frequencyBinCount;
 var frequencyData = new Uint8Array(frequencyBinCount);
 analyser.getByteFrequencyData(frequencyData);
@@ -23,7 +23,7 @@ analyser.connect(gainNode);
 gainNode.connect(audioCtx.destination);
 
 //number of images
-var nbackgrounds = 192;
+var nbackgrounds = 176;
 var imageUrls = [];
 
 function getRandomInt(max) {
@@ -46,13 +46,25 @@ function display(){
 
 function draw() {
   analyser.getByteFrequencyData(frequencyData);
-  var freqSum = 0;
-  for (var i = 0; i < frequencyBinCount; i++) {
-    freqSum = freqSum + frequencyData[i];
+  var subSum = 0;
+  var bassSum = 0;
+  var midSum = 0;
+  var trebSum = 0;
+  subSum = frequencyData[0] + frequencyData[1];
+  bassSum = frequencyData[2] + frequencyData[3] + frequencyData[4] + frequencyData[5];
+  for (var i = 6; i < 100; i++) {
+    midSum = midSum + frequencyData[i];
   }
-  var freqMean = freqSum / frequencyBinCount;
-  if (freqMean * freqMean > threshold) {
-    threshold = freqMean * freqMean;
+  for (var i = 100; i < frequencyBinCount; i++) {
+    midSum = midSum + frequencyData[i];
+  }
+  var freqsubMean = subSum / 2;
+  var freqbassMean = bassSum / 4;
+  var freqmidMean = midSum / 93;
+  var freqtrebMean = trebSum / 412;
+  var freqweightedMean = freqsubMean + 2 * freqbassMean + freqmidMean + freqtrebMean;
+  if (freqweightedMean * freqweightedMean > threshold) {
+    threshold = freqweightedMean * freqweightedMean;
     loadImage();
     display();
     console.log(imageUrls.length);
