@@ -100,3 +100,8 @@ $("#skip").click( function () {
 
 //preload images
 loadImage();
+loadImage();
+loadImage();
+loadImage();
+loadImage();
+loadImage();
