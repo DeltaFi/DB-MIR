@@ -92,6 +92,8 @@ loop();
 $("#enter").on("click", function init() {
   $("#welcome").remove();
   addToPlaylist("Daniel Avery - Drone Logic", "Daniel-Avery-Drone-Logic.mp3");
-  play($("#playlist:first-child"));
+  play($("#Track"));
+  console.log($("#playlist:first"));
+
   setInterval(draw, 1);
 });
