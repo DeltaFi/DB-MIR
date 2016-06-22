@@ -53,33 +53,33 @@ function loadImage()
     var preload6 = new Image();
 
     preload.onload = function () {
-        if (uniqueUrls.length > nbackgrounds){
+        if (uniqueUrls.length < nbackgrounds){
             loadImage();
         }
     };
     preload2.onload = function () {
-        if (uniqueUrls.length > nbackgrounds){
+        if (uniqueUrls.length < nbackgrounds){
             loadImage();
         }
     };
     preload3.onload = function () {
-        if (uniqueUrls.length > nbackgrounds){
+        if (uniqueUrls.length < nbackgrounds){
             loadImage();
         }
     };
 
     preload4.onload = function () {
-        if (uniqueUrls.length > nbackgrounds){
+        if (uniqueUrls.length < nbackgrounds){
             loadImage();
         }
     };
     preload5.onload = function () {
-        if (uniqueUrls.length > nbackgrounds){
+        if (uniqueUrls.length < nbackgrounds){
             loadImage();
         }
     };
     preload6.onload = function () {
-        if (uniqueUrls.length > nbackgrounds){
+        if (uniqueUrls.length < nbackgrounds){
             loadImage();
         }
     };
