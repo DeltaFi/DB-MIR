@@ -71,6 +71,7 @@ function draw() {
   if (freqweightedMean * freqweightedMean > threshold) {
     threshold = freqweightedMean * freqweightedMean;
     display();
+    loadImage();
   }
   threshold = threshold * decay;
   console.log ("threshold: " + threshold);
