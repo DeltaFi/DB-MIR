@@ -37,7 +37,7 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * (max + 1));
 }
 
-function loadImage()
+function loadImage(preloadflag)
 {
     var url = "backgrounds/background" + getRandomInt(nbackgrounds).toString() + ".gif";
     var preload = new Image();
@@ -45,7 +45,7 @@ function loadImage()
         if(uniqueUrls.indexOf(preload.src) >= 0 ){
             uniqueUrls.push(preload.src);
         }
-        if (uniqueUrls.length < nbackgrounds){
+        if (uniqueUrls.length < nbackgrounds && preloadflag == true){
             loadImage();
         }
     };
@@ -81,6 +81,7 @@ function draw() {
   if (freqweightedMean * freqweightedMean > threshold) {
     threshold = freqweightedMean * freqweightedMean;
     display();
+    loadImage(false);
   }
   threshold = threshold * decay;
 }
@@ -99,9 +100,9 @@ $("#skip").click( function () {
 
 
 //preload images
-loadImage();
-loadImage();
-loadImage();
-loadImage();
-loadImage();
-loadImage();
+loadImage(true);
+loadImage(true);
+loadImage(true);
+loadImage(true);
+loadImage(true);
+loadImage(true);
