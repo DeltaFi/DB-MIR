@@ -88,6 +88,10 @@ document.getElementById('title').appendChild(c);
 loop();
 
 //enter button
+$(document).ready(function(){
+  $("#enter").show();
+});
+
 
 $("#enter").on("click", function init() {
   $("#welcome").remove();
