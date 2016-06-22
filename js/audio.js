@@ -89,6 +89,5 @@ $("#skip").click( function () {
 
 //preload images
 
-for (var i = 0; i < 40; i++){
-    loadImage();
-}
+loadImage();
+$('#preload').onload(loadImage());
