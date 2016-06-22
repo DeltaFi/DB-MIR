@@ -92,7 +92,7 @@ loop();
 $("#enter").on("click", function init() {
   $("#welcome").remove();
   addToPlaylist("Daniel Avery - Drone Logic", "Daniel-Avery-Drone-Logic.mp3");
-  play($("#Track"));
+  play($("#playlist li:first"));
   console.log($("#playlist:first"));
 
   setInterval(draw, 1);
