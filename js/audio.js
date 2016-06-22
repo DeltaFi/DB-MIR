@@ -40,6 +40,9 @@ function loadImage()
 {
     var url = "backgrounds/background" + getRandomInt(nbackgrounds).toString() + ".gif";
     $('#preload').attr("src", url);
+    //var preload = new Image();
+    //preload.onload = callback;
+    //preload.src = url;
     imageUrls.push(url);
     console.log("GIF Buffer Length: " + imageUrls.length + " New URL: " + url);
 }
@@ -88,12 +91,5 @@ $("#skip").click( function () {
 });
 
 //preload images
-
+$('#preload').load(loadImage());
 loadImage();
-$('#preload').load(loadImage());
-$('#preload').load(loadImage());
-$('#preload').load(loadImage());
-$('#preload').load(loadImage());
-$('#preload').load(loadImage());
-$('#preload').load(loadImage());
-$('#preload').load(loadImage());
