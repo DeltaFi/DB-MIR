@@ -78,6 +78,6 @@ function draw() {
 }
 
 
-for (var i = 0; i < 4; i++){
+for (var i = 0; i < 20; i++){
     loadImage();
 }
