@@ -68,8 +68,7 @@ function draw() {
     display();
   }
   threshold = threshold * decay;
-  loadImage();
-  console.log ("decay: " + decay);
+  console.log ("threshold: " + threshold);
 }
 
 
