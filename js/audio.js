@@ -39,7 +39,7 @@ function getRandomInt(max) {
 function loadImage()
 {
     var url = "backgrounds/background" + getRandomInt(nbackgrounds).toString() + ".gif";
-    $('#preload').css("background-image", "url(" + url + ")");
+    $('#preload').attr(src, url);
     imageUrls.push(url);
     console.log("GIF Buffer Length: " + imageUrls.length + " New URL: " + url);
 }
@@ -90,4 +90,4 @@ $("#skip").click( function () {
 //preload images
 
 loadImage();
-$('#preload').onload(loadImage());
+$('#preload').load(loadImage());
