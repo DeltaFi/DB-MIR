@@ -87,11 +87,8 @@ document.body.appendChild(c);
 document.getElementById('title').appendChild(c);
 loop();
 
-//enter button
-$(document).ready(function(){
-    progressInterval = setInterval(updateProgressBar,2000);
-});
 
+// preload progress bar, enter button code
 
 var progressInterval;
 var progressCounter = 0;
@@ -102,7 +99,7 @@ function updateProgressBar() {
   $("li.inprogress").toggleClass("inprogress");
   next.toggleClass("inprogress");
   progressCounter++;
-  if (progressCounter = 4){
+  if (progressCounter == 4){
     clearInterval(progressInterval);
     $("#progressBar").hide();
     $("#enter").show();
@@ -115,6 +112,10 @@ $("#enter").on("click", function init() {
   addToPlaylist("Daniel Avery - Drone Logic", "Daniel-Avery-Drone-Logic.mp3");
   play($("#playlist li:first"));
   console.log($("#playlist:first"));
-
   setInterval(draw, 1);
+});
+
+
+$(document).ready(function(){
+    progressInterval = setInterval(updateProgressBar,2000);
 });

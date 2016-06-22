@@ -88,6 +88,8 @@ $("#skip").click( function () {
     audio.currentTime = ($("#skip").val()/1000) * audio.duration;
 });
 
-for (var i = 0; i < nbackgrounds; i++){
+//preload images
+
+for (var i = 0; i < 5; i++){
     loadImage();
 }
