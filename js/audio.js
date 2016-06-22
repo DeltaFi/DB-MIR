@@ -86,7 +86,7 @@ audio.ontimeupdate = function() {
 }
 
 $("#skip").click( function () {
-    audio.currentTime = $("#skip").val() * audio.duration;
+    audio.currentTime = ($("#skip").val()/100) * audio.duration;
 });
 
 for (var i = 0; i < nbackgrounds; i++){
