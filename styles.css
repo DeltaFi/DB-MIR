@@ -301,21 +301,9 @@ canvas {
   text-align: center;
   margin-top: 5%;
 }
-#info-overlay #soundcloud-connect-btn {
-  width: 105px;
-  height: 25px;
-  background-image: url("soundcloud-connect-btn.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  display: inline-block;
-  opacity: 0.8;
-}
-#info-overlay #soundcloud-connect-btn:hover {
-  cursor: pointer;
-  opacity: 1;
-}
-#info-overlay #soundcloud-connect-btn .hide {
-  display: none;
+
+#info-overlay #uploadComplete{
+    display: none;
 }
 #info-overlay #soundcloudurl {
   width: 200px;
@@ -349,6 +337,27 @@ canvas {
   border: 2px solid #bbb;
 }
 #info-overlay #soundcloudSource:hover {
+  background-color: black;
+  border: 2px solid black;
+  color: white;
+}
+
+#info-overlay #fileSubmit {
+  border: none;
+  outline: none;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  background-color: white;
+  color: #bbb;
+  border: 2px solid #bbb;
+}
+#info-overlay #fileSubmit:hover {
   background-color: black;
   border: 2px solid black;
   color: white;

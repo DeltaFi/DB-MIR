@@ -77,16 +77,8 @@
         <a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a>
       </div>
     </div>
-
-    <span style="display:none;"><h3>Settings</h3></span>
-    <div style="display:none;">
-      <center>
-        <span>Nothingness:</span>
-        <input id="nothingness" type="range" name="points" min="0" max="20">
-        <label><input type="checkbox" id="lefton"> Left </label><br>
-        <label><input type="checkbox" id="topon"> Center</label><br>
-        <label><input type="checkbox" id="righton"> Right</label><br>
-      </center>
+    <div>
+        <span id="uploadComplete" >Songs Added!</span>
     </div>
 
     <span><h3>SoundCloud</h3></span>
@@ -113,6 +105,7 @@
     <div>
       <div>
         <input type="file" id="fileselect" accept="audio/*" multiple="">
+        <button id="fileSubmit">Add to Playlist</button>
         <div id="dropbox">DROP FILES HERE</div>
       </div>
       <div>

@@ -23,7 +23,7 @@ analyser.connect(gainNode);
 gainNode.connect(audioCtx.destination);
 
 //number of images
-var nbackgrounds = 195;
+var nbackgrounds = 192;
 var imageUrls = [];
 
 function getRandomInt(max) {
