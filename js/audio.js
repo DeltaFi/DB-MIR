@@ -36,7 +36,7 @@ function loadImage()
     var img = new Image();
     img.src = url;
     imageUrls.push(url);
-    console.log("LOADIMG" + imageUrls.length);
+    console.log("GIF Buffer Length: " + imageUrls.length + " New URL: " + url);
 }
 
 
@@ -67,13 +67,11 @@ function draw() {
     threshold = freqweightedMean * freqweightedMean;
     loadImage();
     display();
-    console.log(imageUrls.length);
   }
   threshold = threshold * decay;
 }
 
 
-for (var i = 0; i <= 4; i++){
+for (var i = 0; i < 4; i++){
     loadImage();
-    console.log("GOOD");
 }
