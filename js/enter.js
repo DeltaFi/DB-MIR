@@ -116,5 +116,5 @@ $("#enter").on("click", function init() {
 
 
 $(document).ready(function(){
-    progressInterval = setInterval(updateProgressBar,7000);
+    progressInterval = setInterval(updateProgressBar,10000);
 });
