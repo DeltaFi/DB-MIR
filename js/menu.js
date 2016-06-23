@@ -30,11 +30,11 @@ var processSoundcloud = function (soundCloudJSON) {
           $("#soundcloudComplete").hide();
       }, 2000);
   }
-  if (soundCloudJSON.kind == "playlist"){
+  else if (soundCloudJSON.kind == "playlist"){
       var addedCount = 0;
       for (var i = 0; i < soundCloudJSON.tracks.length; i++){
           var track = soundCloudJSON.tracks[i];
-          if ( track.streamable){
+          if (track.streamable){
               addToPlaylist(track.title,track.stream_url + "?client_id=f779495a78ca840a61a1f499d830f11e");
               addedCount++;
           }
