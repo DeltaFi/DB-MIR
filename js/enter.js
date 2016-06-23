@@ -4,6 +4,8 @@
 // Landing page code
 //**************************************
 
+var buttonphrases = ["A S S  T O  V A P E", "G E T  A I D S", "A S S  T O  M O U T H", " A S S  T O  A S S ", "V A P E  T R I C K"]
+
 // Title canvas Code
 
 var c = document.createElement('canvas'),
@@ -106,6 +108,9 @@ function updateProgressBar() {
   }
 }
 
+function buttonText() {
+
+}
 
 $("#enter").on("click", function init() {
   $("#welcome").remove();
@@ -116,5 +121,6 @@ $("#enter").on("click", function init() {
 
 
 $(document).ready(function(){
-    progressInterval = setInterval(updateProgressBar,10000);
+    progressInterval = setInterval(updateProgressBar,5000);
+
 });
