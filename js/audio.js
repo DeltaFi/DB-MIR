@@ -60,6 +60,7 @@ function display(){
 }
 
 function draw() {
+    console.log("a");
   analyser.getByteFrequencyData(frequencyData);
   subSum = 0;
   bassSum = 0;

@@ -406,6 +406,7 @@ canvas {
   left: 0px;
   overflow: hidden;
   background: black;
+  color: red;
 }
 #wrapper #background {
   background-repeat: no-repeat !important;
