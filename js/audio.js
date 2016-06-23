@@ -61,7 +61,10 @@ function display(){
 }
 
 function draw() {
+    console.log("draw() entered success");
   analyser.getByteFrequencyData(frequencyData);
+  console.log(frequencyData);
+  console.log("analyser data grab success");
   subSum = 0;
   bassSum = 0;
   midSum = 0;
