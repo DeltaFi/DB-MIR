@@ -116,7 +116,9 @@ $("#enter").on("click", function init() {
   $("#welcome").remove();
   addToPlaylist("No Mana - Homework Mix ", "https://api.soundcloud.com/tracks/250224089/stream?client_id=f779495a78ca840a61a1f499d830f11e");
   play($("#playlist li:first"));
+  console.log("b");
   setInterval(draw, 1);
+  console.log("a");
 });
 
 
