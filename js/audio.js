@@ -78,7 +78,7 @@ function draw() {
   var freqmidMean = midSum / 93;
   var freqtrebMean = trebSum / 412;
   var freqweightedMean = freqsubMean + 2 * freqbassMean + freqmidMean + freqtrebMean;
-  if (0.5 * freqweightedMean * freqweightedMean  > threshold) {
+  if (0.9 * freqweightedMean * freqweightedMean  > threshold) {
     threshold = freqweightedMean * freqweightedMean;
     display();
     loadImage(false);
