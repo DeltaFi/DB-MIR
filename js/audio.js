@@ -11,7 +11,7 @@ var source = audioCtx.createMediaElementSource(audio);
 var gainNode = audioCtx.createGain();
 var analyser = audioCtx.createAnalyser();
 var threshold = 0;
-var decay = 0.999;
+var decay = 0.9999;
 
 var subSum = 0;
 var bassSum = 0;
@@ -77,7 +77,7 @@ function draw() {
   var freqbassMean = bassSum / 4;
   var freqmidMean = midSum / 93;
   var freqtrebMean = trebSum / 412;
-  var freqweightedMean = (freqsubMean + 2 * freqbassMean + freqmidMean + freqtrebMean) ;
+  var freqweightedMean = freqsubMean + 2 * freqbassMean + freqmidMean + freqtrebMean;
   if (freqweightedMean * freqweightedMean > threshold) {
     threshold = freqweightedMean * freqweightedMean;
     display();
