@@ -99,7 +99,7 @@ function updateProgressBar() {
   $("li.inprogress").toggleClass("inprogress");
   next.toggleClass("inprogress");
   progressCounter++;
-  if (progressCounter == 4){
+  if (progressCounter == 5){
     clearInterval(progressInterval);
     $("#progressBar").hide();
     $("#enter").show();
@@ -116,5 +116,5 @@ $("#enter").on("click", function init() {
 
 
 $(document).ready(function(){
-    progressInterval = setInterval(updateProgressBar,4000);
+    progressInterval = setInterval(updateProgressBar,5000);
 });
