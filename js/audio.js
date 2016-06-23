@@ -51,20 +51,15 @@ function loadImage(preloadflag)
     };
     preload.src = url;
     imageUrls.push(url);
-    console.log("GIF Buffer Length: " + imageUrls.length + " New URL: " + url);
 }
 
 
 function display(){
-    console.log("function entered");
     $('#background').css("background-image", "url(" + imageUrls.shift().toString() + ")");
 }
 
 function draw() {
-    console.log("draw() entered success");
   analyser.getByteFrequencyData(frequencyData);
-  console.log(frequencyData);
-  console.log("analyser data grab success");
   subSum = 0;
   bassSum = 0;
   midSum = 0;
@@ -84,7 +79,6 @@ function draw() {
   var freqweightedMean = freqsubMean + 2 * freqbassMean + freqmidMean + freqtrebMean;
   if ( freqweightedMean * freqweightedMean  > threshold) {
     threshold = freqweightedMean * freqweightedMean;
-    console.log("function called");
     display();
     loadImage(false);
   }
