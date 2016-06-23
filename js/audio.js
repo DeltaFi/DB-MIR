@@ -56,6 +56,7 @@ function loadImage(preloadflag)
 
 
 function display(){
+    console.log("function entered");
     $('#background').css("background-image", "url(" + imageUrls.shift().toString() + ")");
 }
 
@@ -80,6 +81,7 @@ function draw() {
   var freqweightedMean = freqsubMean + 2 * freqbassMean + freqmidMean + freqtrebMean;
   if ( freqweightedMean * freqweightedMean  > threshold) {
     threshold = freqweightedMean * freqweightedMean;
+    console.log("function called");
     display();
     loadImage(false);
   }
