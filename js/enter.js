@@ -109,7 +109,7 @@ function updateProgressBar() {
 
 $("#enter").on("click", function init() {
   $("#welcome").remove();
-  addToPlaylist("Daniel Avery - Drone Logic", "Daniel-Avery-Drone-Logic.mp3");
+  addToPlaylist("Late - Practice", "https://api.soundcloud.com/tracks/270367781/stream?client_id=f779495a78ca840a61a1f499d830f11e");
   play($("#playlist li:first"));
   setInterval(draw, 1);
 });
