@@ -29,7 +29,7 @@ analyser.connect(gainNode);
 gainNode.connect(audioCtx.destination);
 
 //number of images
-var nbackgrounds = 176;
+var nbackgrounds = 174;
 var imageUrls = [];
 var uniqueUrls = [];
 
