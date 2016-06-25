@@ -13,7 +13,6 @@ $("#info-btn").on("click", function toggleInfo() {
 // User visualization settings
 //**************************************
 
-
 //**************************************
 // Soundcloud streaming
 //**************************************
@@ -23,57 +22,59 @@ SC.initialize({
 });
 
 var processSoundcloud = function (soundCloudJSON) {
-  if (soundCloudJSON.streamable == true && soundCloudJSON.kind === "track"){
-      addToPlaylist(soundCloudJSON.title,soundCloudJSON.stream_url + "?client_id=f779495a78ca840a61a1f499d830f11e");
-      $("#soundcloudComplete").show();
-      setTimeout( function() {
-          $("#soundcloudComplete").hide();
-      }, 2000);
-  }
-  else if (soundCloudJSON.kind == "playlist"){
-      var addedCount = 0;
-      for (var i = 0; i < soundCloudJSON.tracks.length; i++){
-          var track = soundCloudJSON.tracks[i];
-          if (track.streamable){
-              addToPlaylist(track.title,track.stream_url + "?client_id=f779495a78ca840a61a1f499d830f11e");
-              addedCount++;
-          }
+  if (soundCloudJSON.streamable == true && soundCloudJSON.kind === "track") {
+    addToPlaylist(soundCloudJSON.title, soundCloudJSON.stream_url + "?client_id=f779495a78ca840a61a1f499d830f11e");
+    $("#soundcloudComplete").show();
+    setTimeout(function () {
+      $("#soundcloudComplete").hide();
+    }, 2000);
+  } else if (soundCloudJSON.kind == "playlist") {
+    var addedCount = 0;
+    for (var i = 0; i < soundCloudJSON.tracks.length; i++) {
+      var track = soundCloudJSON.tracks[i];
+      if (track.streamable) {
+        addToPlaylist(track.title, track.stream_url + "?client_id=f779495a78ca840a61a1f499d830f11e");
+        addedCount++;
       }
+    }
+    if (addedCount > 0) {
       $("#soundcloudComplete").text(addedCount.toString() + " Tracks Sucessfully Added!");
       $("#soundcloudComplete").show();
-      setTimeout( function() {
-          $("#soundcloudComplete").hide();
-          $("#soundcloudComplete").text("Music Added!");
+      setTimeout(function () {
+        $("#soundcloudComplete").hide();
+        $("#soundcloudComplete").text("Music Added!");
       }, 2000);
-  }
-  else{
+    } else {
       $("#notstreamable").show();
-      setTimeout( function() {
-          $("#notstreamable").hide();
+      setTimeout(function () {
+        $("#notstreamable").hide();
       }, 2000);
+    }
+  } else {
+    $("#notstreamable").show();
+    setTimeout(function () {
+      $("#notstreamable").hide();
+    }, 2000);
   }
 };
 
-$("#soundcloudSource").click( function () {
-    var url = $("#soundcloudurl").val();
-    if ( !url.includes("soundcloud")){
-        $("#badurl").show();
-        setTimeout( function() {
-            $("#badurl").hide();
-        }, 2000);
-    }
-    else if ( !url.includes("http")){
-        $("#notaurl").show();
-        setTimeout( function() {
-            $("#notaurl").hide();
-        }, 2000);
-    }
-    else {
-        SC.resolve(url).then(processSoundcloud);
-    }
+$("#soundcloudSource").click(function () {
+  var url = $("#soundcloudurl").val();
+  if (!url.includes("soundcloud")) {
+    $("#badurl").show();
+    setTimeout(function () {
+      $("#badurl").hide();
+    }, 2000);
+  } else if (!url.includes("http")) {
+    $("#notaurl").show();
+    setTimeout(function () {
+      $("#notaurl").hide();
+    }, 2000);
+  } else {
+    SC.resolve(url).then(processSoundcloud);
+  }
 
 });
-
 
 //**************************************
 // File Upload
@@ -118,7 +119,7 @@ function handleFiles(files) {
     addToPlaylist(file.name, objectURL);
   }
   $("#uploadComplete").show();
-  setTimeout( function() {
-      $("#uploadComplete").hide();
+  setTimeout(function () {
+    $("#uploadComplete").hide();
   }, 2000);
 }
