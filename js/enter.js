@@ -113,7 +113,7 @@ function buttonText() {
 
 $("#enter").on("click", function init() {
   $("#welcome").remove();
-  addToPlaylist("REZZ x Raito - Alien MASTER V2", "https://DoctorBondage.com/REZZ x Raito - Alien MASTER V2.mp3");
+  addToPlaylist("REZZ x Raito - Alien MASTER V2", "REZZ x Raito - Alien MASTER V2.mp3");
   play($("#playlist li:first"));
   setInterval(draw, 1);
 });
