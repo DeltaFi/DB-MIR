@@ -4,7 +4,6 @@
 // Landing page code
 //**************************************
 
-var buttonphrases = ["A S S  T O  V A P E", "G E T  A I D S", "A S S  T O  M O U T H", " A S S  T O  A S S ", "V A P E  T R I C K"]
 
 // Title canvas Code
 
@@ -114,13 +113,37 @@ function buttonText() {
 
 $("#enter").on("click", function init() {
   $("#welcome").remove();
-  addToPlaylist("No Mana - Homework Mix ", "https://api.soundcloud.com/tracks/250224089/stream?client_id=f779495a78ca840a61a1f499d830f11e");
+  addToPlaylist("REZZ x Raito - Alien MASTER V2", "https://DoctorBondage.com/REZZ x Raito - Alien MASTER V2.mp3");
   play($("#playlist li:first"));
   setInterval(draw, 1);
 });
 
 
+// SIGNATURE PROGRESS
+function moveProgressBar() {
+    var getPercent = ($('.progress-wrap').data('progress-percent') / 100);
+    var getProgressWrapWidth = $('.progress-wrap').width();
+    var progressTotal = getPercent * getProgressWrapWidth;
+    var animationLength = 20000;
+
+    // on page load, animate percentage bar to data percentage length
+    // .stop() used to prevent animation queueing
+    $('.progress-bar').stop().animate({
+        left: progressTotal
+    }, animationLength, function(){
+        $(".progress").hide();
+        $("#enter").show();
+    });
+
+}
+
+
 $(document).ready(function(){
-    progressInterval = setInterval(updateProgressBar,5000);
+    // on page load...
+    moveProgressBar();
+    // on browser resize...
+    $(window).resize(function() {
+        moveProgressBar();
+    });
 
 });

@@ -17,6 +17,7 @@ body {
 }
 #title {
   width: 100%;
+  padding-top: 20%;
   text-align: center;
   position: relative;
 }
@@ -28,21 +29,10 @@ canvas {
   margin-right: auto;
   display: block;
 }
-#portrait {
-  width: 70%;
-  height: auto;
-  max-width: 600px;
-}
 #enter {
   background-color: black;
   border-color: #fd0100;
-  background-image: -webkit-linear-gradient(hsla(0, 0%, 100%, .05), hsla(0, 0%, 0%, .1));
-  background-image: -moz-linear-gradient(hsla(0, 0%, 100%, .05), hsla(0, 0%, 0%, .1));
-  background-image: -ms-linear-gradient(hsla(0, 0%, 100%, .05), hsla(0, 0%, 0%, .1));
-  background-image: -o-linear-gradient(hsla(0, 0%, 100%, .05), hsla(0, 0%, 0%, .1));
-  background-image: linear-gradient(hsla(0, 0%, 100%, .05), hsla(0, 0%, 0%, .1));
   border-radius: .5em;
-  box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, .2), inset 0 2px 0 hsla(0, 0%, 100%, .1), inset 0 1.2em 0 hsla(0, 0%, 100%, 0.1), inset 0 -.2em 0 hsla(0, 0%, 100%, .1), inset 0 -.25em 0 hsla(0, 0%, 0%, .25), 0 .25em .25em hsla(0, 0%, 0%, .05);
   color: #fd0100;
   display: inline-block;
   font-size: 1em;
@@ -50,6 +40,7 @@ canvas {
   line-height: 1.5;
   margin: 0 .5em 1em;
   padding: .5em 2.5em .75em;
+  margin-top: 20%;
   position: relative;
   text-decoration: none;
   text-shadow: 0 1px 1px hsla(0, 0%, 100%, .25);
@@ -58,11 +49,11 @@ canvas {
   border-radius: .25em;
 }
 #enter:hover, #enter:focus {
-  box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, .2), inset 0 2px 0 hsla(0, 0%, 100%, .1), inset 0 1.2em 0 hsla(0, 0%, 100%, .1), inset 0 -.2em 0 hsla(0, 0%, 100%, .1), inset 0 -.25em 0 hsla(0, 0%, 0%, .25), inset 0 0 0 3em hsla(0, 0%, 100%, .2), 0 .25em .25em hsla(0, 0%, 0%, .05);
+  color: #990000;
 }
 #enter:active {
   box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, .2), inset 0 2px 0 hsla(0, 0%, 100%, .1), inset 0 1.2em 0 hsla(0, 0%, 100%, .1), inset 0 0 0 3em hsla(0, 0%, 100%, .2), inset 0 .25em .5em hsla(0, 0%, 0%, .05), 0 -1px 1px hsla(0, 0%, 0%, .1), 0 1px 1px hsla(0, 0%, 100%, .25);
-  margin-top: .25em;
+  margin-top: 20%;
   outline: none;
   padding-bottom: .5em;
 }
@@ -105,7 +96,7 @@ canvas {
   padding-bottom: 20px;
   display: none;
 }
-#sound-btn:hover+ #volume-container, #volume-container:hover {
+#sound-btn:hover+#volume-container, #volume-container:hover {
   display: block;
 }
 #volume {
@@ -132,14 +123,6 @@ canvas {
   color: white;
   text-align: center;
   background-color: black;
-  background: -webkit-linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6));
-  /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6));
-  /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6));
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6));
-  /* Standard syntax */
   -webkit-transition: opacity 0.5s ease-out;
   -moz-transition: opacity 0.5s ease-out;
   -ms-transition: opacity 0.5s ease-out;
@@ -150,14 +133,6 @@ canvas {
 }
 #player:hover {
   opacity: 1;
-  background: -webkit-linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6));
-  /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6));
-  /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6));
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6));
-  /* Standard syntax */
 }
 #skip {
   height: 20px;
@@ -187,14 +162,6 @@ canvas {
   color: white;
   background-color: black;
   border-radius: 10px;
-  background: -webkit-linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8));
-  /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8));
-  /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8));
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8));
-  /* Standard syntax */
   left: 100%;
   bottom: 5px;
   position: absolute;
@@ -209,7 +176,7 @@ canvas {
   opacity: 0.9;
   left: 5px;
 }
-#playlist-overlay center> div {
+#playlist-overlay center>div {
   width: auto;
   height: 300px;
   overflow-y: scroll;
@@ -292,12 +259,12 @@ canvas {
   opacity: 0.9;
   left: 0px;
 }
-#info-overlay> div {
+#info-overlay>div {
   width: auto;
   height: auto;
   margin: 10px;
 }
-#info-overlay> .centered {
+#info-overlay>.centered {
   text-align: center;
   margin-top: 5%;
 }
@@ -419,7 +386,6 @@ canvas {
   left: 0px;
   background-size: cover;
 }
-
 #wrapper #preload {
   position: absolute;
   width: 0px;
@@ -428,54 +394,20 @@ canvas {
   z-index: -1000;
   left: -9999px;
 }
-
-ul#progressBar {
-  margin-left: 20%;
-  margin-right: 20%;
-  height: 10px;
-  width: auto;
-  text-align: center;
-  top: 0;
+.progress {
+  width: 100%;
+  height: 50px;
+}
+.progress-wrap {
+  background: #cc0000;
+  margin: 20px 0;
+  margin-top: 20%;
+  overflow: hidden;
+  position: relative;
+}
+.progress-bar {
+  background: black;
   left: 0;
-  right: 0;
-  bottom: 0;
-  list-style: none;
-  padding: 0;
-}
-#progressBar li {
-  display: inline-block;
-  float: none;
-  width: 15%;
-  min-width: 35px;
-  height: 10px;
-  margin: 5px;
-  box-shadow: inset 0px 0px 10px 2px rgba(255, 0, 0, 0.4), 0px 0px 20px rgba(255, 0, 0, 0.1);
-}
-li.doneprogress {
-  background: rgba(255, 0, 0, 0.5);
-  box-shadow: inset 0px 0px 10px 2px rgba(255, 0, 0, 0.7), 0px 0px 20px rgba(255, 0, 0, 0.9);
-}
-li.inprogress {
-  -webkit-animation: pulse 1s alternate infinite;
-  -moz-animation: pulse 1s alternate infinite;
-}
-@-webkit-keyframes pulse {
-  0% {
-    background: rgba(255, 0, 0, 0.6);
-    box-shadow: inset 0px 0px 10px 2px rgba(255, 0, 0, 0.5), 0px 0px 20px rgba(255, 0, 0, 1);
-  }
-  100% {
-    background: rgba(255, 0, 0, 0);
-    box-shadow: inset 0px 0px 10px 2px rgba(255, 0, 0, 0.5), 0px 0px 30px 2px rgba(0, 0, 0, 0.3);
-  }
-}
-@-moz-keyframes pulse {
-  0% {
-    background: rgba(255, 0, 0, 0.6);
-    box-shadow: inset 0px 0px 10px 2px rgba(255, 0, 0, 0.5), 0px 0px 20px rgba(255, 0, 0, 1);
-  }
-  100% {
-    background: rgba(255, 0, 0, 0);
-    box-shadow: inset 0px 0px 10px 2px rgba(255, 0, 0, 0.5), 0px 0px 30px 2px rgba(255, 0, 0, 0.3);
-  }
+  position: absolute;
+  top: 0;
 }
