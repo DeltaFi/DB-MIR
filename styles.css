@@ -396,7 +396,7 @@ canvas {
 }
 .progress {
   width: 100%;
-  height: 50px;
+  height: 25px;
 }
 .progress-wrap {
   background: #cc0000;
