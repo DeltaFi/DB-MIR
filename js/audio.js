@@ -29,7 +29,7 @@ analyser.connect(gainNode);
 gainNode.connect(audioCtx.destination);
 
 //number of videos
-var nbackgrounds = 10;
+var nbackgrounds = 9;
 var videoUrls = [];
 var uniqueUrls = [];
 
@@ -55,7 +55,7 @@ function loadVideo(preloadflag)
 
 
 function display(){
-    $('#background-source').src= "url(" + videoUrls.shift().toString() + ")";
+    $('#background').src= "url(" + videoUrls.shift().toString() + ")";
 }
 
 function draw() {
