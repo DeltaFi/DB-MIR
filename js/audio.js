@@ -55,7 +55,7 @@ function loadVideo(preloadflag)
 
 
 function display(){
-    $('#background').src= "url(" + videoUrls.shift().toString() + ")";
+    $("#background > source").attr("src", "url(" + videoUrls.shift().toString() + ")");
 }
 
 function draw() {
