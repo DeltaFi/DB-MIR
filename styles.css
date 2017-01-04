@@ -383,8 +383,6 @@ canvas {
   min-height: 100%;
   width: auto;
   height: auto;
-  top: 0px;
-  left: 0px;
   z-index: 1;
   background-size: 100% 100%;
 }
