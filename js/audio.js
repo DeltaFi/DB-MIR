@@ -90,6 +90,3 @@ $("#skip").click( function () {
 
 
 preLoadVideo();
-preLoadVideo();
-preLoadVideo();
-preLoadVideo();

@@ -21,7 +21,7 @@ SC.initialize({
   client_id: 'f779495a78ca840a61a1f499d830f11e',
 });
 
-var processSoundcloud = function (soundCloudJSON) {
+function processSoundcloud(soundCloudJSON) {
   if (soundCloudJSON.streamable == true && soundCloudJSON.kind === "track") {
     addToPlaylist(soundCloudJSON.title, soundCloudJSON.stream_url + "?client_id=f779495a78ca840a61a1f499d830f11e");
     $("#soundcloudComplete").show();

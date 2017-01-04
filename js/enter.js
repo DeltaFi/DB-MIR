@@ -91,9 +91,9 @@ loop();
 
 $("#enter").on("click", function init() {
   $("#welcome").remove();
-  addToPlaylist("REZZ x Raito - Alien MASTER V2", "REZZ x Raito - Alien MASTER V2.mp3");
+  SC.resolve("https://soundcloud.com/malaamusic/malaa-danger").then(processSoundcloud);
   play($("#playlist li:first"));
-  setInterval(draw, 2);
+  setInterval(draw, 1);
 });
 
 
@@ -102,7 +102,7 @@ function moveProgressBar() {
     var getPercent = ($('.progress-wrap').data('progress-percent') / 100);
     var getProgressWrapWidth = $('.progress-wrap').width();
     var progressTotal = getPercent * getProgressWrapWidth;
-    var animationLength = 5000;
+    var animationLength = 3000;
 
     // on page load, animate percentage bar to data percentage length
     // .stop() used to prevent animation queueing
