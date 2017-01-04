@@ -5,8 +5,7 @@ body {
   padding: 0px;
   font-family: Verdana, Arial;
   background-color: black;
-  overflow: auto;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 #welcome {
   position: absolute;
