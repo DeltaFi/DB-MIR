@@ -384,6 +384,9 @@ canvas {
   width: auto;
   height: auto;
   z-index: 1;
+  margin-left: auto;
+  margin-right: auto;
+  display: block
   background-size: 100% 100%;
 }
 
