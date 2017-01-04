@@ -89,28 +89,6 @@ document.getElementById('title').appendChild(c);
 loop();
 
 
-// preload progress bar, enter button code
-
-var progressInterval;
-var progressCounter = 0;
-
-function updateProgressBar() {
-  $("li.inprogress").toggleClass("doneprogress");
-  var next = $("li.inprogress").next();
-  $("li.inprogress").toggleClass("inprogress");
-  next.toggleClass("inprogress");
-  progressCounter++;
-  if (progressCounter == 5){
-    clearInterval(progressInterval);
-    $("#progressBar").hide();
-    $("#enter").show();
-  }
-}
-
-function buttonText() {
-
-}
-
 $("#enter").on("click", function init() {
   $("#welcome").remove();
   addToPlaylist("REZZ x Raito - Alien MASTER V2", "REZZ x Raito - Alien MASTER V2.mp3");

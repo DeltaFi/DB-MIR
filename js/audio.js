@@ -28,34 +28,34 @@ source.connect(analyser);
 analyser.connect(gainNode);
 gainNode.connect(audioCtx.destination);
 
-//number of images
-var nbackgrounds = 174;
-var imageUrls = [];
+//number of videos
+var nbackgrounds = 10;
+var videoUrls = [];
 var uniqueUrls = [];
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * (max + 1));
 }
 
-function loadImage(preloadflag)
+function loadVideo(preloadflag)
 {
-    var url = "backgrounds/background" + getRandomInt(nbackgrounds).toString() + ".gif";
-    var preload = new Image();
+    var url = "backgrounds/background" + getRandomInt(nbackgrounds).toString() + ".mp4";
+    var preload = document.createElement('video');
     preload.onload = function (preload) {
         if(uniqueUrls.indexOf(preload.src) >= 0 ){
             uniqueUrls.push(preload.src);
         }
-        if (uniqueUrls.length < nbackgrounds && preloadflag == true && imageUrls.length < 2000){
-            loadImage(true);
+        if (uniqueUrls.length < nbackgrounds && preloadflag == true && videoUrls.length < 10){
+            loadVideo(true);
         }
     };
     preload.src = url;
-    imageUrls.push(url);
+    videoUrls.push(url);
 }
 
 
 function display(){
-    $('#background').css("background-image", "url(" + imageUrls.shift().toString() + ")");
+    $('#background-source').src= "url(" + videoUrls.shift().toString() + ")";
 }
 
 function draw() {
@@ -80,7 +80,7 @@ function draw() {
   if ( freqweightedMean * freqweightedMean  > threshold) {
     threshold = freqweightedMean * freqweightedMean;
     display();
-    loadImage(false);
+    loadVideo(false);
   }
   threshold = threshold * decay;
 }
@@ -96,12 +96,10 @@ $("#skip").click( function () {
     audio.currentTime = ($("#skip").val()/1000) * audio.duration;
 });
 
-
-
-//preload images
-loadImage(true);
-loadImage(true);
-loadImage(true);
-loadImage(true);
-loadImage(true);
-loadImage(true);
+//preload videos
+loadVideo(true);
+//loadVideo(true);
+//loadVideo(true);
+//loadVideo(true);
+//loadVideo(true);
+//loadVideo(true);
