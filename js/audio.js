@@ -37,27 +37,20 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * (max + 1));
 }
 
-function loadVideo(preloadflag)
-{
-    var url = "backgrounds/background" + getRandomInt(nbackgrounds).toString() + ".mp4";
-    var preload = document.createElement('video');
-    preload.onload = function (preload) {
-        if(uniqueUrls.indexOf(preload.src) >= 0 ){
-            uniqueUrls.push(preload.src);
-        }
-        if (uniqueUrls.length < nbackgrounds && preloadflag == true && videoUrls.length < 10){
-            loadVideo(true);
-        }
-    };
-    preload.src = url;
-    videoUrls.push(url);
+function preLoadVideo(){
+  var url = "backgrounds/background" + getRandomInt(nbackgrounds).toString() + ".mp4";
+  videoUrls.push(url);
+  $("#background > source").attr("src", "http://www.DoctorBondage.com/" + url );
+  $("#background").load();
 }
 
-
-function display(){
-    $("#background > source").attr("src", "http://www.DoctorBondage.com/" + videoUrls.shift().toString() );
-    $("#background").load();
+function loadVideo(){
+  var url = "backgrounds/background" + getRandomInt(nbackgrounds).toString() + ".mp4";
+  videoUrls.push(url);
+  $("#background > source").attr("src", "http://www.DoctorBondage.com/" + videoUrls.shift().toString() );
+  $("#background").load();
 }
+
 
 function draw() {
   analyser.getByteFrequencyData(frequencyData);
@@ -80,8 +73,8 @@ function draw() {
   var freqweightedMean = freqsubMean + 2 * freqbassMean + freqmidMean + freqtrebMean;
   if ( freqweightedMean * freqweightedMean  > threshold) {
     threshold = freqweightedMean * freqweightedMean;
+    loadVideo();
     display();
-    loadVideo(false);
   }
   threshold = threshold * decay;
 }
@@ -97,10 +90,8 @@ $("#skip").click( function () {
     audio.currentTime = ($("#skip").val()/1000) * audio.duration;
 });
 
-//preload videos
-loadVideo(true);
-loadVideo(true);
-loadVideo(true);
-loadVideo(true);
-loadVideo(true);
-loadVideo(true);
+
+preLoadVideo();
+preLoadVideo();
+preLoadVideo();
+preLoadVideo();
