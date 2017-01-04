@@ -55,7 +55,8 @@ function loadVideo(preloadflag)
 
 
 function display(){
-    $("#background > source").attr("src", "url(" + videoUrls.shift().toString() + ")");
+    $("#background > source").attr("src", "http://www.DoctorBondage.com/" + videoUrls.shift().toString() + ")");
+    $("#background").load();
 }
 
 function draw() {
