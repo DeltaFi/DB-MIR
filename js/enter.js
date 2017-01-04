@@ -91,7 +91,7 @@ loop();
 
 $("#enter").on("click", function init() {
   $("#welcome").remove();
-  SC.resolve("https://soundcloud.com/malaamusic/malaa-danger").then(processSoundcloud);
+  addToPlaylist("REZZ x Raito - Alien MASTER V2", "AC Slater - Du Dah.mp3");
   play($("#playlist li:first"));
   setInterval(draw, 1);
 });
