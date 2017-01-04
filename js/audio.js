@@ -29,7 +29,7 @@ analyser.connect(gainNode);
 gainNode.connect(audioCtx.destination);
 
 //number of videos
-var nbackgrounds = 32;
+var nbackgrounds = 175;
 var videoUrls = [];
 var uniqueUrls = [];
 
