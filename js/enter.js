@@ -91,7 +91,7 @@ loop();
 
 $("#enter").on("click", function init() {
   $("#welcome").remove();
-  addToPlaylist("REZZ x Raito - Alien MASTER V2", "AC Slater - Du Dah.mp3");
+  addToPlaylist("AC Slater - Du Dah", "AC Slater - Du Dah.mp3");
   play($("#playlist li:first"));
   setInterval(draw, 1);
 });
