@@ -93,7 +93,7 @@ $("#enter").on("click", function init() {
   $("#welcome").remove();
   addToPlaylist("REZZ x Raito - Alien MASTER V2", "REZZ x Raito - Alien MASTER V2.mp3");
   play($("#playlist li:first"));
-  setInterval(draw, 1);
+  setInterval(draw, 2);
 });
 
 

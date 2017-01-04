@@ -11,7 +11,7 @@ var source = audioCtx.createMediaElementSource(audio);
 var gainNode = audioCtx.createGain();
 var analyser = audioCtx.createAnalyser();
 var threshold = 1;
-var decay = 0.9995;
+var decay = 0.9993;
 
 var subSum = 0;
 var bassSum = 0;
@@ -31,7 +31,6 @@ gainNode.connect(audioCtx.destination);
 //number of videos
 var nbackgrounds = 175;
 var videoUrls = [];
-var uniqueUrls = [];
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * (max + 1));
