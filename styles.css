@@ -376,18 +376,18 @@ canvas {
   color: red;
 }
 #wrapper #background {
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
   position: absolute;
   min-width: 100%;
   min-height: 100%;
   width: auto;
   height: auto;
   z-index: 1;
-  margin-left: auto;
-  margin-right: auto;
-  display: block
-  background-size: 100% 100%;
+  overflow: hidden;
 }
 
 
