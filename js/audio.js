@@ -99,8 +99,8 @@ $("#skip").click( function () {
 
 //preload videos
 loadVideo(true);
-//loadVideo(true);
-//loadVideo(true);
-//loadVideo(true);
-//loadVideo(true);
-//loadVideo(true);
+loadVideo(true);
+loadVideo(true);
+loadVideo(true);
+loadVideo(true);
+loadVideo(true);
