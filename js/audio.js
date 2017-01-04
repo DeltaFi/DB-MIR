@@ -11,7 +11,7 @@ var source = audioCtx.createMediaElementSource(audio);
 var gainNode = audioCtx.createGain();
 var analyser = audioCtx.createAnalyser();
 var threshold = 1;
-var decay = 0.9980;
+var decay = 0.990;
 
 var subSum = 0;
 var bassSum = 0;
