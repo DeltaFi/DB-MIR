@@ -18,7 +18,7 @@ var bassSum = 0;
 var midSum = 0;
 var trebSum = 0;
 
-analyser.fftSize = 1024;
+analyser.fftSize = 512;
 analyser.smoothingTimeConstant = 0.8;
 var frequencyBinCount = analyser.frequencyBinCount;
 var frequencyData = new Uint8Array(frequencyBinCount);
@@ -46,9 +46,9 @@ function preLoadVideo(){
 
 function loadVideo(){
   var url = "backgrounds/background" + getRandomInt(nbackgrounds).toString() + ".mp4";
-  videoUrls.push(url);
   $("#background > source").attr("src", "http://www.DoctorBondage.com/" + videoUrls.shift().toString() );
   $("#background").load();
+  videoUrls.push(url);
 }
 
 
@@ -72,9 +72,8 @@ function draw() {
   var freqtrebMean = trebSum / 412;
   var freqweightedMean = freqsubMean + 2 * freqbassMean + freqmidMean + freqtrebMean;
   if ( freqweightedMean * freqweightedMean  > threshold) {
-    threshold = freqweightedMean * freqweightedMean;
     loadVideo();
-    display();
+    threshold = freqweightedMean * freqweightedMean;
   }
   threshold = threshold * decay;
 }
