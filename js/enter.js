@@ -93,7 +93,7 @@ $("#enter").on("click", function init() {
   $("#welcome").remove();
   addToPlaylist("AC Slater - Du Dah", "AC Slater - Du Dah.mp3");
   play($("#playlist li:first"));
-  setInterval(draw, 1);
+  setInterval(draw, 3);
 });
 
 
