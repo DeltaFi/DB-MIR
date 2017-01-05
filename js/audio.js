@@ -79,7 +79,7 @@ function draw() {
   var freqmidMean = midSum / 93;
   var freqtrebMean = trebSum / 412;
   var freqweightedMean = freqsubMean + 2 * freqbassMean + freqmidMean + freqtrebMean;
-  changeOpacity(freqweightedMean * freqweightedMean / float(threshold));
+  changeOpacity(freqweightedMean * freqweightedMean / threshold);
   if ( freqweightedMean * freqweightedMean  > threshold) {
     loadVideo();
     changeColor();
