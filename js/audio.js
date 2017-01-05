@@ -78,7 +78,7 @@ function draw() {
   var freqweightedMean = freqsubMean + 2 * freqbassMean + freqmidMean + freqtrebMean;
   if ( freqweightedMean * freqweightedMean  > threshold) {
     loadVideo();
-    changeColour();
+    changeColor();
     threshold = freqweightedMean * freqweightedMean;
   }
   threshold = threshold * decay;
