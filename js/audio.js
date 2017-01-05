@@ -56,6 +56,9 @@ function changeColor(){
   $("#wrapper").css("background-color", colorList[getRandomInt(colorList.length)]);
 }
 
+function changeOpacity(val){
+  $("#wrapper").css({ opacity: val });
+}
 
 function draw() {
   analyser.getByteFrequencyData(frequencyData);
@@ -76,6 +79,7 @@ function draw() {
   var freqmidMean = midSum / 93;
   var freqtrebMean = trebSum / 412;
   var freqweightedMean = freqsubMean + 2 * freqbassMean + freqmidMean + freqtrebMean;
+  changeOpacity(freqweightedMean * freqweightedMean / float(threshold));
   if ( freqweightedMean * freqweightedMean  > threshold) {
     loadVideo();
     changeColor();
