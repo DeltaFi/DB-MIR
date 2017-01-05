@@ -18,7 +18,7 @@ var bassSum = 0;
 var midSum = 0;
 var trebSum = 0;
 
-analyser.fftSize = 512;
+analyser.fftSize = 1024;
 analyser.smoothingTimeConstant = 0.8;
 var frequencyBinCount = analyser.frequencyBinCount;
 var frequencyData = new Uint8Array(frequencyBinCount);
@@ -50,6 +50,12 @@ function loadVideo(){
   videoUrls.push(url);
 }
 
+function changeColor(){
+  var colorList = ["#FFFFFF","#FFFF00","#FFFF33","#F2EA02","#E6FB04","#FF0000","#FD1C03","#FF3300","#FF6600","#00FF00","#00FF33","#00FF66","#33FF00",
+  "#00FFFF","#099FFF","#0062FF","#0033FF","#FF00FF","#FF00CC","#FF0099","#CC00FF","#9D00FF","#CC00FF","#6E0DD0","#9900FF"];
+  $("#wrapper").css("background-color", colorList[getRandomInt(colorList.length)]);
+}
+
 
 function draw() {
   analyser.getByteFrequencyData(frequencyData);
@@ -72,6 +78,7 @@ function draw() {
   var freqweightedMean = freqsubMean + 2 * freqbassMean + freqmidMean + freqtrebMean;
   if ( freqweightedMean * freqweightedMean  > threshold) {
     loadVideo();
+    changeColour();
     threshold = freqweightedMean * freqweightedMean;
   }
   threshold = threshold * decay;
