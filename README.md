@@ -1,6 +1,4 @@
-# DoctorBondage
-
-Website Available at http://www.doctorbondage.com
+# soundcloud-music-visualizer
 
 An implementation of FFT beat detection using Web Audio API. Music sourced locally or via SoundCloud API. 
 
