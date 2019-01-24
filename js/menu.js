@@ -18,14 +18,17 @@ $("#info-btn").on("click", function toggleInfo() {
 //**************************************
 
 SC.initialize({
-  client_id: 'f779495a78ca840a61a1f499d830f11e',
+  client_id: "f779495a78ca840a61a1f499d830f11e"
 });
 
 function processSoundcloud(soundCloudJSON) {
   if (soundCloudJSON.streamable == true && soundCloudJSON.kind === "track") {
-    addToPlaylist(soundCloudJSON.title, soundCloudJSON.stream_url + "?client_id=f779495a78ca840a61a1f499d830f11e");
+    addToPlaylist(
+      soundCloudJSON.title,
+      soundCloudJSON.stream_url + "?client_id=f779495a78ca840a61a1f499d830f11e"
+    );
     $("#soundcloudComplete").show();
-    setTimeout(function () {
+    setTimeout(function() {
       $("#soundcloudComplete").hide();
     }, 2000);
   } else if (soundCloudJSON.kind == "playlist") {
@@ -33,47 +36,51 @@ function processSoundcloud(soundCloudJSON) {
     for (var i = 0; i < soundCloudJSON.tracks.length; i++) {
       var track = soundCloudJSON.tracks[i];
       if (track.streamable) {
-        addToPlaylist(track.title, track.stream_url + "?client_id=f779495a78ca840a61a1f499d830f11e");
+        addToPlaylist(
+          track.title,
+          track.stream_url + "?client_id=f779495a78ca840a61a1f499d830f11e"
+        );
         addedCount++;
       }
     }
     if (addedCount > 0) {
-      $("#soundcloudComplete").text(addedCount.toString() + " Tracks Sucessfully Added!");
+      $("#soundcloudComplete").text(
+        addedCount.toString() + " Tracks Sucessfully Added!"
+      );
       $("#soundcloudComplete").show();
-      setTimeout(function () {
+      setTimeout(function() {
         $("#soundcloudComplete").hide();
         $("#soundcloudComplete").text("Music Added!");
       }, 2000);
     } else {
       $("#notstreamable").show();
-      setTimeout(function () {
+      setTimeout(function() {
         $("#notstreamable").hide();
       }, 2000);
     }
   } else {
     $("#notstreamable").show();
-    setTimeout(function () {
+    setTimeout(function() {
       $("#notstreamable").hide();
     }, 2000);
   }
-};
+}
 
-$("#soundcloudSource").click(function () {
+$("#soundcloudSource").click(function() {
   var url = $("#soundcloudurl").val();
   if (!url.includes("soundcloud")) {
     $("#badurl").show();
-    setTimeout(function () {
+    setTimeout(function() {
       $("#badurl").hide();
     }, 2000);
   } else if (!url.includes("http")) {
     $("#notaurl").show();
-    setTimeout(function () {
+    setTimeout(function() {
       $("#notaurl").hide();
     }, 2000);
   } else {
     SC.resolve(url).then(processSoundcloud);
   }
-
 });
 
 //**************************************
@@ -87,7 +94,7 @@ dropbox.addEventListener("dragenter", dragenter, false);
 dropbox.addEventListener("dragover", dragover, false);
 dropbox.addEventListener("drop", drop, false);
 
-fileselect.onchange = function () {
+fileselect.onchange = function() {
   var files = this.files;
   handleFiles(files);
 };
@@ -119,7 +126,7 @@ function handleFiles(files) {
     addToPlaylist(file.name, objectURL);
   }
   $("#uploadComplete").show();
-  setTimeout(function () {
+  setTimeout(function() {
     $("#uploadComplete").hide();
   }, 2000);
 }
