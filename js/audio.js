@@ -38,22 +38,22 @@ function getRandomInt(max) {
 }
 
 function preLoadVideo() {
-  var url =
+  const url =
     "backgrounds/background" + getRandomInt(nbackgrounds).toString() + ".mp4";
-  videoUrls.push(url);
   $("#background > source").attr(
     "src",
-    "file:///Users/dado/Projects/soundcloud-music-visualizer/" + url
+    "file:///Users/dado/Projects/SoundCloudMusicVisualizer/" + url
   );
   $("#background").load();
+  videoUrls.push(url);
 }
 
 function loadVideo() {
-  var url =
+  const url =
     "backgrounds/background" + getRandomInt(nbackgrounds).toString() + ".mp4";
   $("#background > source").attr(
     "src",
-    "file:///Users/dado/Projects/soundcloud-music-visualizer/" +
+    "file:///Users/dado/Projects/SoundCloudMusicVisualizer/" +
       videoUrls.shift().toString()
   );
   $("#background").load();
